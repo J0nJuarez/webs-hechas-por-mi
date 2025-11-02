@@ -5,6 +5,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import * as THREE from 'three'
 import './app.css'
 import Boton from './componentes/boton'
+import LiquidEther from './componentes/background/liquidBckg'
+import Wrapper from './componentes/wrapper'
 
 /*eslint no-inline-comments: "error"*/
 // Esta bien asi
@@ -41,14 +43,34 @@ const Laptop: React.FC<LaptopProps> = () => {
 const App: React.FC = () => {
   return (
     <main className="app-container h-full">
+
       <div className="grid h-full grid-cols-4 grid-rows-4 gap-4">
         <div id="info" className="col-span-1 row-span-4">
-            <div>
-            <h1>Laptop 3D Model</h1>
-            <p>Use mouse to rotate, zoom, and pan the model.</p>
-            </div>
+            <Wrapper 
+                titulo="Mi Portafolio"
+                descripcion="Este es un proyecto de ejemplo utilizando React y Three.js"
+                logoUrl="https://mymonday.es/app/themes/Monday/favicon/favicon-32x32.png"
+                tecnologias={['React', 'Three.js', 'TypeScript']}
+            />
         </div>
         <div id="render" className="col-span-3 row-span-3">
+            <LiquidEther
+                colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
+                mouseForce={20}
+                cursorSize={100}
+                isViscous={false}
+                viscous={30}
+                iterationsViscous={32}
+                iterationsPoisson={32}
+                resolution={0.2}
+                isBounce={false}
+                autoDemo={true}
+                autoSpeed={0.5}
+                autoIntensity={1.2}
+                takeoverDuration={0.25}
+                autoResumeDelay={3000}
+                autoRampDuration={0.6}
+            />
             <Canvas
               camera={{ position: [1, 1, 3], fov: 50 }}
               resize={{ scroll: true }}
