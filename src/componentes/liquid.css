@@ -84,6 +84,14 @@
   height: 64px;
   width: 64px;
 }
+
+ul {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 li {
   z-index: 2;
   overflow: hidden;

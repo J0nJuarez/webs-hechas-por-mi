@@ -29,7 +29,7 @@ const Screen: React.FC<{ url: string; fallbackUrl?: string }> = ({ url, fallback
     iframe.style.top = '-9999px'
     iframe.style.width = '1024px'
     iframe.style.height = '768px'
-    iframe.sandbox.add('allow-scripts', 'allow-same-origin') // intenta ayudar en caso de contenido controlado
+    iframe.sandbox.add('allow-scripts', 'allow-same-origin') 
     iframe.src = url
     document.body.appendChild(iframe)
     iframeRef.current = iframe
@@ -195,7 +195,7 @@ useEffect(() => {
             <directionalLight position={[0.9, 4, 0.4]} intensity={5} color="#808080" />
             <OrbitControls enableZoom={true} enablePan={false} enableRotate={true} target={[0, 0, 0]} minDistance={2} maxDistance={10} />
             <Laptop />
-           {/* <Screen url={selected.iframeUrl} fallbackUrl={selected.logoUrl} /> */}
+            <Screen url={selected.iframeUrl} fallbackUrl={selected.logoUrl} />
           </Canvas>
         </div>
         <nav className="app-nav col-span-3 row-span-1">
